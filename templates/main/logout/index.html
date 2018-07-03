@@ -1,0 +1,10 @@
+{% extends "main/layout.html" %}
+{% block body %}
+{% include "main/is_login.html" %}
+<h1>ログアウト</h1>
+{% for item in data.error_message %}
+	{{item}}
+{% endfor %}
+<p>ログアウトが完了しました。</p>
+
+{% endblock %}

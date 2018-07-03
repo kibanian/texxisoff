@@ -1,0 +1,21 @@
+{% extends "main/layout.html" %}
+{% block body %}
+{% include "main/is_login.html" %}
+<h1>テニスオフみたいなサイト</h1>
+
+<h2>メニュー</h2>
+<div>
+	<ul>
+		<li><a href="/practice_ctrl">練習管理</a></li>
+	</ul>
+
+</div>
+
+<h2>最新の練習</h2>
+{% for item in data.practice %}
+	<ul>
+		<li>{{item.title}} {{item.start_date}} {{item.start_time}} <a href="/apply_practice/{{item.id}}">参加表明する</a></li>
+	</ul>
+{% endfor %}
+
+{% endblock %}

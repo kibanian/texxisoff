@@ -1,0 +1,14 @@
+{% extends "main/layout.html" %}
+{% block body %}
+{% include "main/is_login.html" %}
+<h1>ログイン</h1>
+{% for item in data.error_message %}
+	{{item}}
+{% endfor %}
+<form action="" method="POST">
+	<div>メールアドレス：<input type="mail" name="mail" value="" maxlength="50" required></div>
+	<div>パスワード：<input type="password" name="password" value="" maxlength="16" required=""></div>
+	<button type="submit">OK</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,7 @@
+{% extends "main/layout.html" %}
+{% block body %}
+<p>メンバー登録に失敗しました。</p>
+	{% for item in data.error_message %}
+		<p>{{item}}</p>
+	{% endfor %}
+{% endblock %}

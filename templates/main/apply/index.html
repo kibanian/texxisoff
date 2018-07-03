@@ -1,0 +1,19 @@
+{% extends "main/layout.html" %}
+{% block body %}
+<h1>練習参加申込書</h1>
+{% if not data.error_message == [] %}
+	{% for item in data.error_message %}
+		{{item}}
+	{% endfor %}
+{% endif %}
+<form action="" method="POST">
+	<p>練習名</p>
+	<div>{{data.title}}</div>
+	<p>開催日時</p>
+	<div>{{data.start_date}} {{data.start_time}}</div>
+	<p>申請者ID</p>
+	<div>{{data.member_id}}</div>
+	<button type="submit">参加申請する</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "main/practice_ctrl/layout.html" %}
+{% block body %}
+{% include "main/is_login.html" %}
+<h1>練習管理</h1>
+	
+<h2>開催予定の練習 <a href="/practice_ctrl/add_practice">新規追加</a></h2>
+	{% for item in data.practice %}
+		<p>{{item.id}} {{item.title}} <a href="/entry_ctrl/">参加者を確認</a></p>
+	{% endfor %}
+
+{% endblock %}

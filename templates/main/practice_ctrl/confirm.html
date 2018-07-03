@@ -1,0 +1,64 @@
+{% extends "main/practice_ctrl/layout.html" %}
+{% block body %}
+<div class="modal-container">
+	<h2>練習を新規追加する</h2>
+	<div class="close"><span v-on:click="$emit('close')">×</span></div>
+	<form action="" method="POST">
+		<p><label for="title">練習タイトル <span>※必須</span></label></p>
+		<div>{{data.title}}</div>
+		<p><label for="datetime">開催日時 <span>※必須</span></label></p>
+		<div>
+			{{data.year}}
+			<span>年</span>
+			{{data.month}}
+			<span>月</span>
+			{{data.date}}
+			<span>日</span>
+			{{data.hour}}
+			<span>時</span>
+			{{data.minute}}
+			<span>分から</span>
+			{{data.length}}
+			<span>時間</span>
+		</div>
+		<p><label>参加申込み締切り日時 <span>※必須</span></label></p>
+		<div>
+			<span>開催日の</span>
+			{{data.deaddate}}
+			<span>の</span>
+			{{data.deadtime}}
+			<span>に締め切る</span>
+		</div>
+		<p><label>募集定員数 <span>※必須</span></label></p>
+		<div>
+			{{data.membernum}}
+			{{data.unit}}
+		</div>
+		<p><label>テニスコート会場 <span>※必須</span></label></p>
+		<div>
+			<span>会場名：</span>
+			{{data.court}}
+		</div>
+		<p><label>コート面数 <span>※必須</span></label></p>
+		<div>
+			{{data.court_num}}
+			<span>面</span>
+		</div>
+		<p><label>コートの種類 <span>※必須</span></label></p>
+		<div>
+			{{data.court_type}}
+		</div>
+		<p><label>練習の詳細情報 <span>※必須</span></label></p>
+		<div>{{data.explain}}</div>
+		<p><label>その他</label></p>
+		<div>{{data.other}}</div>
+		<p><label>主催者選出の参加者</label></p>
+		<div>
+			<span>名前:</span>
+			{{data.recommend}}
+		</div>
+		<div><button type="submit">OK</button></div>
+		<div><button type="submit">戻る</button></div>
+	</form>
+</div>
+{% endblock %}

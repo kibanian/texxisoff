@@ -1,0 +1,20 @@
+{% extends "main/layout.html" %}]
+{% block body %}
+{% include "main/is_login.html" %}
+<h1>{{data.practice.title}}（ID：{{data.practice.id}}）の参加者・参加申請者</h1>
+<div>
+	<h2>参加者</h2>
+	{% for item in data.entry %}
+		{% if item.condition_id == 2 %}
+		<p>{{item.name}}（{{item.member_id}}） <a href="/entry_ctrl/reject/{{item.practice_id}}/{{item.member_id}}">拒否</a></p>
+		{% endif %}
+	{% endfor %}
+	<h2>申請者</h2>
+	{% for item in data.entry %}
+		{% if item.condition_id == 1 %}
+		<p>{{item.name}}（{{item.member_id}}） <a href="/entry_ctrl/accept/{{item.practice_id}}/{{item.member_id}}">承認</a> <a href="/entry_ctrl/reject/{{item.practice_id}}/{{item.member_id}}">拒否</a></p>
+		{% endif %}
+	{% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,6 @@
+{% if session.get('mail') != None and session.get('password') != None %}
+<p>ログイン中 <a href="/logout">ログアウト</a></p>
+{% else %}
+<p><a href="/login">ログイン<a> <a href="/create_member/">アカウント作成</a></p>
+{% endif %}
+<p><a href="/">トップに戻る</a></p>
